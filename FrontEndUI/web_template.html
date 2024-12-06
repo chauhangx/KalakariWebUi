@@ -1,56 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Choose Your Blog Template</title>
-  <link rel="stylesheet" href="web_template.css">
-  <script src="web_template.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Blog Template</title>
+    <link rel="stylesheet" href="web_template.css">
+    <script src="web_template.js"></script>
 </head>
 <body>
-  <header class="main-header">
-    <h2 class="page-title">Choose Your Template</h2>
-  </header>
-  <main class="template-container">
-    <div class="theme toolbox" onclick="openCustomizationForm('web_customization_form.html', 1)">
-      <header class="theme-header">
-        <h1>Tasty Treats</h1>
-        <p>Macaron Memories</p>
-      </header>
-      <div class="content">
-        <img src="C:/Project/FrontEnd/asset/template01.png" alt="Template 1">
-      </div>
-    </div>
+    <nav>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="kalakari">Kalakari</span><span class="web">Web</span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="theme toolbox" onclick="openCustomizationForm('web_customization_form.html', 2)">
-      <header class="theme-header">
-        <h1>Chic Designs</h1>
-        <p>Modern Elegance</p>
-      </header>
-      <div class="content">
-        <img src="C:/Project/FrontEnd/asset/template02.png" alt="Template 2">
-      </div>
-    </div>
-	
-	<div class="theme toolbox" onclick="openCustomizationForm('web_customization_form.html', 2)">
-      <header class="theme-header">
-        <h1>Chic Designs</h1>
-        <p>Modern Elegance</p>
-      </header>
-      <div class="content">
-        <img src="C:/Project/FrontEnd/asset/template02.png" alt="Template 2">
-      </div>
-    </div>
-	<div class="theme toolbox" onclick="openCustomizationForm('web_customization_form.html', 1)">
-      <header class="theme-header">
-        <h1>Tasty Treats</h1>
-        <p>Macaron Memories</p>
-      </header>
-      <div class="content">
-        <img src="C:/Project/FrontEnd/asset/template01.png" alt="Template 1">
-      </div>
-    </div>
-	
-  </main>
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <h3>Filter by Category:</h3>
+            <div class="filter-options">
+                <button class="filter-btn">Food</button>
+                <button class="filter-btn">Fashion</button>
+                <button class="filter-btn">Portfolio</button>
+                <button class="filter-btn">Creative</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="template-container">
+        <!-- Template Card 1 (Clickable) -->
+        <div class="theme card" onclick="openCustomizationForm('web_customization_form.html', 1)">
+            <div class="card-header">
+                <h1>Tasty Treats</h1>
+                <p>Macaron Memories</p>
+            </div>
+            <div class="card-body">
+                <img src="C:/Project/FrontEnd/asset/template01.png" alt="Template 1">
+                <p class="card-description">A sweet, elegant template perfect for dessert blogs and food lovers.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn coming-soon " id="customizeBtn1">Customize</button>
+                <div class="dot-blink"></div>
+            </div>
+        </div>
+
+        <!-- Template Card 2 (Non-clickable) with "Coming Soon" -->
+        <div class="theme card non-clickable">
+            <div class="card-header">
+                <h1>Chic Designs</h1>
+                <p>Modern Elegance</p>
+            </div>
+            <div class="card-body">
+                <img src="C:/Project/FrontEnd/asset/template02.png" alt="Template 2">
+                <p class="card-description">A sleek and minimalist design for fashion, lifestyle, or portfolio websites.</p>
+                <div class="coming-soon-container">
+                    <div class="coming-soon">
+                        <span>Coming Soon</span>
+                        <div class="dot-blink"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <!--<button class="btn" disabled>Coming Soon</button>-->
+            </div>
+        </div>
+
+        <!-- Template Card 3 (Non-clickable) with "Coming Soon" -->
+        <div class="theme card non-clickable">
+            <div class="card-header">
+                <h1>Creative Sparks</h1>
+                <p>Inspired Creativity</p>
+            </div>
+            <div class="card-body">
+                <img src="C:/Project/FrontEnd/asset/template03.png" alt="Template 3">
+                <p class="card-description">A vibrant template for creative professionals and artists looking to showcase their work.</p>
+                <div class="coming-soon-container">
+                    <div class="coming-soon">
+                        <span>Coming Soon</span>
+                        <div class="dot-blink"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <!--<button class="btn" disabled>Coming Soon</button>-->
+            </div>
+        </div>
+    </main>
+
+    <!-- Page Navigation -->
+    <footer class="page-navigation">
+        <div class="container">
+            <div class="pagination">
+                <button class="nav-btn">1</button>
+                <button class="nav-btn">2</button>
+                <button class="nav-btn">3</button>
+                <button class="nav-btn">Next</button>
+            </div>
+            <div class="quick-links">
+                <a href="#about">About</a> |
+                <a href="#contact">Contact</a> |
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
