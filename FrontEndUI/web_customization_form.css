@@ -1,13 +1,88 @@
 /* General styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f8fa;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #F4F4F4; /* Subtle gray background */
     color: #333;
 }
 
-/* Main container for the form */
+/* Navbar Styling */
+nav {
+    background-color: #FF5722; /* Dark orange for the navbar background */
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+}
+
+.kalakari {
+    color: #FF9800; /* Lighter orange for Kalakari */
+}
+
+.web {
+    color: #FFF; /* White for Web */
+    margin-left: 4px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+    .nav-links li {
+        font-size: 1rem;
+    }
+
+    .nav-links a {
+        color: #FFF; /* White text for navbar links */
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+        .nav-links a:hover {
+            background-color: #FF9800; /* Lighter orange on hover */
+            color: #FFF; /* Keep the text white */
+        }
+
+/* Logo styling */
+.logo img {
+    width: 70px;
+    height: auto;
+    border-radius: 50%;
+    opacity: 0.9; /* Slight transparency */
+}
+
+    .logo img:hover {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+/* Form Container */
 .form-container {
     width: 100%;
     max-width: 900px;
@@ -53,10 +128,10 @@ input, textarea {
     transition: border-color 0.3s;
 }
 
-input:focus, textarea:focus {
-    border-color: #4CAF50;
-    outline: none;
-}
+    input:focus, textarea:focus {
+        border-color: #FF5722; /* Orange border on focus */
+        outline: none;
+    }
 
 textarea {
     resize: vertical;
@@ -71,7 +146,7 @@ input[type="checkbox"] {
 /* Submit button styling */
 button.submit-btn {
     padding: 12px 20px;
-    background-color: #4CAF50;
+    background-color: #FF5722; /* Dark orange for button */
     color: white;
     border: none;
     border-radius: 6px;
@@ -80,12 +155,23 @@ button.submit-btn {
     transition: background-color 0.3s;
 }
 
-button.submit-btn:hover {
-    background-color: #45a049;
-}
+    button.submit-btn:hover {
+        background-color: #FF9800; /* Lighter orange on hover */
+    }
 
-button.submit-btn:active {
-    background-color: #3e8e41;
+    button.submit-btn:active {
+        background-color: #E64A19; /* Darker orange on active */
+    }
+
+/* Footer */
+footer {
+    background-color: #FF5722; /* Dark orange for footer */
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
 /* Responsive design for smaller screens */

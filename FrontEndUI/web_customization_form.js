@@ -1,8 +1,9 @@
 
-        document.getElementById("customizationForm").addEventListener("submit", async function (e) {
+
+document.getElementById("customizationForm").addEventListener("submit", async function (e) {
             e.preventDefault();
 
-            const userEmail = "amitnegi@gmail.com";
+            const userEmail = localStorage.getItem("email");
             const header = document.getElementById("header").value;
             const topic = document.getElementById("topic").value;
             const author = document.getElementById("author").value;
@@ -36,6 +37,7 @@
                 if (response.ok) {
                     const result = await response.json();
                     //alert(result.message); // Show success message in an alert
+					localStorage.setItem("postViewId",result.newId);
 					window.location.href = "postView.html"
                 } else {
                     const error = await response.json();

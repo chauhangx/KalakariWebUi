@@ -1,25 +1,33 @@
-// Simulated data for testing (random values assigned)
-const data = {
-    header: "My Professional Blog",
-    topic: "The Future of Web Development",
-    author: "Jane Doe",
-    date: "November 30, 2024",
-    image: "", // Placeholder image URL
-    content: "Web development is rapidly evolving, with new technologies, frameworks, and tools emerging every day. As developers, it’s important to stay updated on the latest trends and best practices. This article discusses some of the most exciting advancements in web development, such as serverless architecture, progressive web apps, and modern JavaScript frameworks like React and Vue.",
-    footer: "© 2024 My Professional Blog. All rights reserved."
-};
+// API URL and userEmail fetched from localStorage
+const apiUrl = "https://localhost:44339/api/WebCustomization/GetByUserEmail";
+const userEmail = localStorage.getItem("email");
 
-//https://drive.google.com/uc?export=view&id=1E1yht9cPbeorO_obyXGyvyJebzwPwveH
-// Function to populate the page with the simulated data
-function populateData() {
-    document.querySelector('.site-title').textContent = data.header;  // Header title
-    document.querySelector('.post-title').textContent = data.topic;   // Blog post title
-    document.querySelector('#author-name').textContent = data.author; // Author name
-    document.querySelector('#post-date').textContent = data.date;     // Post date
-    document.querySelector('#post-image').src = data.image;           // Post image
-    document.querySelector('#post-content').textContent = data.content; // Blog post content
-    document.querySelector('.footer-text').textContent = data.footer; // Footer content
+// Function to fetch data from the API and populate the page
+async function fetchDataAndPopulate() {
+    try {
+        // Fetch data from the API
+        const response = await fetch(`${apiUrl}?userEmail=${encodeURIComponent(userEmail)}`);
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data: ${response.status} ${response.statusText}`);
+        }
+
+        // Parse the response JSON
+        const data = await response.json();
+
+        // Populate the page with the fetched data
+        document.querySelector('.site-title').textContent = data.header || "Default Title";  // Header title
+        document.querySelector('.post-title').textContent = data.topic || "Default Topic";   // Blog post title
+        document.querySelector('#author-name').textContent = data.author || "Default Author"; // Author name
+        document.querySelector('#post-date').textContent = data.date || "Default Date";     // Post date
+        document.querySelector('#post-image').src = data.image || "default-image-url.jpg";  // Post image
+        document.querySelector('#post-content').textContent = data.content || "Default Content"; // Blog post content
+        document.querySelector('.footer-text').textContent = data.footer || "Default Footer"; // Footer content
+
+    } catch (error) {
+        console.error("Error populating data:", error);
+    }
 }
 
-// Call the populateData function when the page is loaded
-window.onload = populateData;
+// Call the function when the page is loaded
+window.onload = fetchDataAndPopulate;

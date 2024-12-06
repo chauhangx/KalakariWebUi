@@ -1,65 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Login Page For Website Developing Tool</title>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap">
-  <link rel="stylesheet" href="login.css">
-  <script src="login.js"></script>
-  <style>
-    .error-message {
-      color: red;
-      font-size: 0.9em;
-      margin-top: 5px;
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KalakariWeb</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap">
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
 </head>
 <body>
-<div class="screen-1">
-<svg class="logo" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" viewBox="0 0 640 480" xml:space="preserve">
-  <!-- Background Circle -->
-  <circle cx="320" cy="160" r="120" fill="#4CAF50" />
-  
-  <!-- Initials or Icon -->
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="96" fill="white" text-anchor="middle" alignment-baseline="middle">
-    L
-  </text>
+    <div class="login-container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo">
+                <span class="kalakari">Kalakari</span><span class="web">Web</span>
+            </div>
+        </div>
 
-  <!-- Optional Accent Line -->
-  <line x1="180" y1="320" x2="460" y2="320" stroke="white" stroke-width="8" />
-</svg>
-  <div class="email">
-    <label for="email">Email Address</label>
-    <div class="sec-2">
-      <ion-icon name="mail-outline"></ion-icon>
-      <input type="email" id="email" name="email" placeholder="Username@gmail.com"/>
-      <div id="emailError" class="error-message">Please enter a valid email address.</div>
+        <!-- Login Form -->
+        <form class="login-form">
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <div class="input-wrapper">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" id="email" name="email" placeholder="Username@gmail.com" required />
+                </div>
+                <div id="emailError" class="error-message">Please enter a valid email address.</div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password" name="password" placeholder="············" required />
+                </div>
+                <div id="passwordError" class="error-message">Please enter your password.</div>
+            </div>
+            <br/>
+            <button class="login-btn" onclick="validateAndLogin(event)">Login</button>
+            <br/>
+            <div id="loginError" class="error-message">Invalid email or password. Please try again.</div>
+
+            <!-- Footer links -->
+            <br/>
+            <div class="footer">
+                <button onclick="location.href='signup.html'">Sign Up</button>
+                <button onclick="location.href='forget.html'">Forgot Password?</button>
+            </div>
+        </form>
     </div>
-  </div>
-
-  <div class="password">
-    <label for="password">Password</label>
-    <div class="sec-2">
-      <ion-icon name="lock-closed-outline"></ion-icon>
-      <input class="pas" type="password" id="password" name="password" placeholder="············"/>
-      <div id="passwordError" class="error-message">Please enter your password.</div>
-    </div>
-  </div>
-
-  <button class="login" onclick="validateAndLogin()">login</button>
-   <!-- <a class="login" href="../web_template.html">login</a> -->
-  <div id="loginError" class="error-message">Invalid email or password. Please try again.</div>
-
-  <div class="footer">
-    <span><button onclick="location.href='signup.html'">Signup</button></span>
-    <span><button onclick="location.href='forget.html'">Forgot Password?</button></span>
-  </div>
-</div>
-
-
 </body>
 </html>

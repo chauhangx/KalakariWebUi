@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post Form</title>
-   <link rel="stylesheet" href="web_customization_form.css">
-   <script src="web_customization_form.js" defer ></script>
+    <title>Blog Post Form - KalakariWeb</title>
+    <link rel="stylesheet" href="web_customization_form.css">
+    <script src="web_customization_form.js" defer></script>
 </head>
 <body>
-     <div class="form-container">
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="kalakari">Kalakari</span><span class="web">Web</span>
+                </div>
+            </div>
+           
+        </div>
+    </nav>
+
+    <!-- Form Container -->
+    <div class="form-container">
         <h1>Create a New Blog Post</h1>
         <form id="customizationForm" class="form">
             <div class="form-group">
                 <label for="header">Header:</label>
                 <input type="text" id="header" name="header" placeholder="Enter blog header" required>
             </div>
-            
+
             <div class="form-group">
                 <label for="topic">Topic:</label>
                 <input type="text" id="topic" name="topic" placeholder="Enter blog topic" required>
@@ -26,11 +39,6 @@
                 <input type="text" id="author" name="author" placeholder="Enter author's name" required>
             </div>
 
-            <!-- <div class="form-group"> -->
-                <!-- <label for="date">Date:</label> -->
-                <!-- <input type="text" id="date" name="date" readonly required> -->
-            <!-- </div> -->
-
             <div class="form-group">
                 <label for="image">Image URL:</label>
                 <input type="url" id="image" name="image" placeholder="Enter image URL" required>
@@ -40,10 +48,12 @@
                 <label for="content">Content:</label>
                 <textarea id="content" name="content" placeholder="Write your content here" rows="6" required></textarea>
             </div>
+
             <div class="form-group">
-                <label for="content">Content:</label>
-                <input type="text" id="footer" name="author" placeholder="footer name" required>
+                <label for="footer">Footer:</label>
+                <input type="text" id="footer" name="footer" placeholder="Enter footer name" required>
             </div>
+
             <div class="form-group">
                 <label for="isActive">Is Active:</label>
                 <input type="checkbox" id="isActive" name="isActive" checked>
@@ -52,6 +62,9 @@
             <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
-    
+
+    <footer>
+        <p>&copy; 2024 KalakariWeb. All rights reserved.</p>
+    </footer>
 </body>
 </html>

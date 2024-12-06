@@ -6,30 +6,17 @@
     <meta name="description" content="KalakariWeb helps you create stunning websites effortlessly, without any coding skills.">
     <title>KalakariWeb - Empower Your Creativity</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="newhome.css">
-	<style>
-        /* Logo styling */
-        .logo img {
-            width: 70px;
-            height: auto;
-            border-radius: 50%;
-            opacity: 0.9; /* Slight transparency */
-        }
-
-        .logo img:hover {
-            opacity: 1;
-            transition: opacity 0.3s ease-in-out;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
-    <!-- Navigation -->
+    
     <nav>
         <div class="container">
-            <a href="#" class="logo">
-                <img src="logo.webp" alt="KalakariWeb Logo">
-            </a>
+            <div class="logo-container">
+                <div class="logo">
+                    <span class="kalakari">Kalakari</span><span class="web">Web</span>
+                </div>
+            </div>
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -45,11 +32,11 @@
         <div class="container">
             <h1 class="animate-text">Welcome to KalakariWeb</h1>
             <p>Create stunning websites effortlessly, with no coding skills required.</p>
-			<br/>
-			<a href="#about" id="getStarted" class="btn electrify">Get Started</a>
-			<!-- <button id="getStarted" class="btn electrify">Get Started</button> -->
+            <br />
+            <a href="#about" id="getStarted" class="btn electrify">Get Started</a>
         </div>
     </header>
+
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
@@ -59,7 +46,7 @@
                 <a href="contact.html" class="contact-link">Contact us at support@kalakariweb.com</a>
             </div>
             <div class="about-img">
-                <img src="https://via.placeholder.com/500x300" alt="KalakariWeb creativity">
+                <img src="https://images.pexels.com/photos/3741029/pexels-photo-3741029.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Creative website design">
             </div>
         </div>
     </section>
@@ -71,12 +58,3 @@
 
 </body>
 </html>
-
-<script>
-
-document.getElementById("getStarted").onclick = function(event) {
-    event.preventDefault();  // Prevent the default anchor behavior
-    window.open('get_started.html', '_blank');  // Open the new page in a new tab
-};
-
-</script>
