@@ -1,0 +1,90 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.screen-1 {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.email, .password {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.sec-2 {
+    position: relative;
+}
+
+.sec-2 ion-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+input {
+    width: 100%;
+    padding: 12px 10px 12px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #61a5e0;
+    outline: none;
+}
+
+button.signup {
+    width: 100%;
+    padding: 12px;
+    background-color: #61a5e0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.signup:hover {
+    background-color: #4a8bc4;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.footer span {
+    display: block;
+}
+
+.footer button {
+    background: none;
+    border: none;
+    color: #61a5e0;
+    cursor: pointer;
+    text-decoration: underline;
+}

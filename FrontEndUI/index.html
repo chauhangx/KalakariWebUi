@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KalakariWeb helps you create stunning websites effortlessly, without any coding skills.">
+    <title>KalakariWeb - Empower Your Creativity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="newhome.css">
+	<style>
+        /* Logo styling */
+        .logo img {
+            width: 70px;
+            height: auto;
+            border-radius: 50%;
+            opacity: 0.9; /* Slight transparency */
+        }
+
+        .logo img:hover {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.webp" alt="KalakariWeb Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="samples/login.html">Login</a></li>
+                <li><a href="samples/signup.html">Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="animate-text">Welcome to KalakariWeb</h1>
+            <p>Create stunning websites effortlessly, with no coding skills required.</p>
+			<br/>
+			<a href="#about" id="getStarted" class="btn electrify">Get Started</a>
+			<!-- <button id="getStarted" class="btn electrify">Get Started</button> -->
+        </div>
+    </header>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About KalakariWeb</h2>
+                <p>KalakariWeb is dedicated to fostering creativity. Our platform enables users to craft stunning, functional websites effortlessly, even without coding expertise. Catering to everyone from artisans to entrepreneurs, we provide a variety of adaptable templates to meet your unique requirements.</p>
+                <a href="contact.html" class="contact-link">Contact us at support@kalakariweb.com</a>
+            </div>
+            <div class="about-img">
+                <img src="https://via.placeholder.com/500x300" alt="KalakariWeb creativity">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 KalakariWeb. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+<script>
+
+document.getElementById("getStarted").onclick = function(event) {
+    event.preventDefault();  // Prevent the default anchor behavior
+    window.open('get_started.html', '_blank');  // Open the new page in a new tab
+};
+
+</script>

@@ -1,0 +1,254 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    background-color: #343a40; /* Darker, more professional strip */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect */
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+nav:hover {
+    background-color: #23272b; /* Change to an even darker tone when hovered */
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    color: #ffcc00; /* Brightened logo color */
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added hover transition effect */
+}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #ff0c00;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    transform: translateY(-3px); /* A subtle lift effect when hovered */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(52, 58, 64, 0.85), rgba(52, 58, 64, 0.85)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;  /* Ensure the hero content is above the pseudo-element */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(52,58,64,0));
+    animation: pulse 4s infinite;
+    z-index: 0;  /* Make sure the pseudo-element is behind the content */
+}
+
+.hero h1, .hero p, .hero .btn {
+    position: relative;
+    z-index: 2;  /* Ensure the content, including buttons, is above the pseudo-element */
+}
+
+/* Button styling */
+.btn.electrify {
+    position: relative;
+    z-index: 2;  /* Ensure the button is clickable */
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn.electrify:hover {
+    background-color: #e64a19;
+}
+
+/* Button with 3D Press Effect */
+.btn.electrify {
+    padding: 15px 30px;
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 5px 0 #cc9900; /* Added shadow for a 3D press effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn.electrify:hover {
+    transform: translateY(-5px); /* Button moves up slightly on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect */
+}
+
+.btn.electrify:active {
+    transform: translateY(2px); /* Pressed down effect */
+    box-shadow: 0 3px 0 #cc9900;
+}
+
+/* About Section */
+.about-section {
+    background-color: white;
+    padding: 60px 20px;
+}
+
+.about-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-content {
+    flex-basis: 60%;
+    animation: fadeUp 2s ease-out;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.about-img {
+    flex-basis: 35%;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-out;
+}
+
+.contact-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #0056b3;
+    border-bottom-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-content, .about-img {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .about-img {
+        margin-top: 20px;
+    }
+}

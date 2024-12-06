@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Blog - KalakariWeb</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="KalakariWeb Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Templates</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Blog Post Section -->
+    <section class="blog-post">
+        <h1 id="blogTitle"></h1>
+        <p id="blogContent"></p>
+        <p><strong>Contact:</strong> <span id="contactNumber"></span> | <strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Interests:</strong> <span id="interests"></span></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 KalakariWeb. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Retrieve data from local storage
+        const blogTitle = localStorage.getItem("blogTitle");
+        const blogContent = localStorage.getItem("blogContent");
+        const contactNumber = localStorage.getItem("contactNumber");
+        const email = localStorage.getItem("email");
+        const interests = localStorage.getItem("interests");
+
+        // Set the retrieved data to the respective elements
+        document.getElementById("blogTitle").innerText = blogTitle;
+        document.getElementById("blogContent").innerText = blogContent;
+        document.getElementById("contactNumber").innerText = contactNumber;
+        document.getElementById("email").innerText = email;
+        document.getElementById("interests").innerText = interests;
+    </script>
+
+</body>
+</html>

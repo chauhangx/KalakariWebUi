@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="forget.css">
+</head>
+<body>
+<div class="screen-1">
+  <h1>Forgot Password</h1>
+  <p>Please enter your email address to receive a password reset link.</p>
+
+  <form id="forgot-form">
+    <div class="email">
+      <label for="email">Email Address</label>
+      <div class="sec-2">
+        <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+        <input type="email" name="email" id="email" placeholder="Username@gmail.com" required />
+      </div>
+    </div>
+
+    <button type="submit" class="submit">Send Reset Link</button>
+    <div class="footer">
+      <span><a href="login.html">Back to Login</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById('forgot-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('Reset link sent to your email!');
+  });
+</script>
+</body>
+</html>

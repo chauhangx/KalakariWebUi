@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Form</title>
+   <link rel="stylesheet" href="web_customization_form.css">
+   <script src="web_customization_form.js" defer ></script>
+</head>
+<body>
+     <div class="form-container">
+        <h1>Create a New Blog Post</h1>
+        <form id="customizationForm" class="form">
+            <div class="form-group">
+                <label for="header">Header:</label>
+                <input type="text" id="header" name="header" placeholder="Enter blog header" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="topic" placeholder="Enter blog topic" required>
+            </div>
+
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" placeholder="Enter author's name" required>
+            </div>
+
+            <!-- <div class="form-group"> -->
+                <!-- <label for="date">Date:</label> -->
+                <!-- <input type="text" id="date" name="date" readonly required> -->
+            <!-- </div> -->
+
+            <div class="form-group">
+                <label for="image">Image URL:</label>
+                <input type="url" id="image" name="image" placeholder="Enter image URL" required>
+            </div>
+
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" placeholder="Write your content here" rows="6" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <input type="text" id="footer" name="author" placeholder="footer name" required>
+            </div>
+            <div class="form-group">
+                <label for="isActive">Is Active:</label>
+                <input type="checkbox" id="isActive" name="isActive" checked>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="postView.css"> <!-- Link to the external stylesheet -->
+</head>
+<body>
+    <!-- Main container for the page -->
+    <div class="page-wrapper">
+        <!-- Header Section -->
+        <header id="header" class="header">
+            <div class="container">
+                <h1 class="site-title"></h1> <!-- Header content dynamically loaded -->
+            </div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main class="content">
+            <div class="container">
+                <!-- Blog Post Section -->
+                <article class="blog-post">
+                    <h2 class="post-title"></h2> <!-- Topic dynamically loaded -->
+                    <div class="post-meta">
+                        <span class="author">By <span id="author-name"></span></span> |
+                        <span class="date" id="post-date"></span>
+                    </div>
+                    <div class="post-image">
+                        <img src="" alt="Blog post image" id="post-image" /> <!-- Blog Image -->
+                    </div>
+                    <div class="post-content">
+                        <p id="post-content"></p> <!-- Main content dynamically loaded -->
+                    </div>
+                    <div class="call-to-action">
+                        <button class="cta-btn">Read More</button>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer id="footer" class="footer">
+            <div class="container">
+                <p class="footer-text"></p> <!-- Footer text dynamically loaded -->
+            </div>
+        </footer>
+    </div>
+
+    <script src="postView.js"></script> <!-- External JS for fetching data from API -->
+</body>
+</html>

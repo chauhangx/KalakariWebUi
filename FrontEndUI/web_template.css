@@ -1,0 +1,78 @@
+/* General Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5; /* Softer light background */
+  color: #333; /* Darker text for contrast */
+}
+
+.main-header {
+  background-color: #2C3E50; /* Rich dark blue-gray */
+  color: #E0E1DD; /* Light text for visibility */
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.template-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.theme {
+  background: #34495E; /* Cool dark background for cards */
+  border-radius: 10px;
+  overflow: hidden;
+  color: #E0E1DD;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.theme:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.theme-header {
+  background: #2C3E50; /* Darker header background */
+  padding: 15px;
+  text-align: center;
+}
+
+.theme-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.theme-header p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #BDC3C7; /* Slightly muted text for description */
+}
+
+.content {
+  height: 200px;
+  overflow: hidden;
+}
+
+.content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.theme:hover .content img {
+  transform: scale(1.1);
+}

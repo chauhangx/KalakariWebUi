@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup Page For Website Developing Tool</title>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap'>
+  <link rel="stylesheet" href="signup.css">
+  <style>
+    .error-message {
+      color: red;
+      font-size: 0.9em;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="screen-1">
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" viewBox="0 0 640 480" xml:space="preserve">
+    <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+      <circle style="fill: rgb(61,71,133);" cx="0" cy="0" r="40"></circle>
+    </g>
+  </svg>
+  
+  <div class="email">
+    <label for="email">Email Address</label>
+    <div class="sec-2">
+      <ion-icon name="mail-outline"></ion-icon>
+      <input type="email" id="email" name="email" placeholder="Username@gmail.com" required/>
+      <div id="emailError" class="error-message">Please enter a valid email address.</div>
+    </div>
+  </div>
+  
+  <div class="password">
+    <label for="password">Password</label>
+    <div class="sec-2">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input class="pas" type="password" id="password" name="password" placeholder="············" required/>
+      <div id="passwordLengthError" class="error-message">Password must be at least 8 characters long.</div>
+    </div>
+  </div>
+  
+  <div class="password">
+    <label for="confirm-password">Confirm Password</label>
+    <div class="sec-2">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input class="pas" type="password" id="confirmPassword" name="confirm-password" placeholder="············" required/>
+      <div id="passwordError" class="error-message">Passwords do not match.</div>
+    </div>
+  </div>
+  
+  <button class="signup" onclick="validateForm()">Sign Up</button>
+  <div class="footer">
+    <span><button onclick="location.href='login.html'">Already have an account? Login</button></span>
+    <span><button onclick="location.href='forget.html'">Forgot Password?</button></span>
+  </div>
+</div>
+
+<script>
+  async function validateForm() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    const emailError = document.getElementById('emailError');
+    const passwordLengthError = document.getElementById('passwordLengthError');
+    const passwordError = document.getElementById('passwordError');
+
+    let isValid = true;
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      emailError.style.display = 'block';
+      isValid = false;
+    } else {
+      emailError.style.display = 'none';
+    }
+
+    // Password length validation
+    if (password.length < 8) {
+      passwordLengthError.style.display = 'block';
+      isValid = false;
+    } else {
+      passwordLengthError.style.display = 'none';
+    }
+
+    // Password match validation
+    if (password !== confirmPassword) {
+      passwordError.style.display = 'block';
+      isValid = false;
+    } else {
+      passwordError.style.display = 'none';
+    }
+
+    if (isValid) {
+      // Call the API
+      const apiUrl = 'https://localhost:44339/api/Signup';
+      const payload = {
+        email: email,
+        password: password
+      };
+
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          // Redirect to aftersignup.html if API call is successful
+          window.location.href = 'aftersignup.html';
+        } else {
+          alert('Signup failed. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please check your network connection and try again.');
+      }
+    }
+  }
+</script>
+</body>
+</html>

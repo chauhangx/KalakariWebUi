@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - KalakariWeb</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="KalakariWeb Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Templates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Get Started Section -->
+    <section class="get-started">
+        <h1>Let's Get Started!</h1>
+        <p>Please provide the following information to customize your blog:</p>
+        <form id="customizationForm">
+            <label for="websiteName">Website Name:</label>
+            <input type="text" id="websiteName" name="websiteName" required>
+
+            <label for="websiteType">Website Type:</label>
+            <select id="websiteType" name="websiteType" required>
+                <option value="blog">Blog</option>
+                <option value="online_store">Online Store</option>
+            </select>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="interests">Interests/Hobbies:</label>
+            <textarea id="interests" name="interests" rows="4" required></textarea>
+
+            <label for="blogTitle">Blog Title:</label>
+            <input type="text" id="blogTitle" name="blogTitle" required>
+
+            <label for="blogContent">Blog Content:</label>
+            <textarea id="blogContent" name="blogContent" rows="8" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 KalakariWeb. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("customizationForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get values from the form
+            const websiteName = document.getElementById("websiteName").value;
+            const websiteType = document.getElementById("websiteType").value;
+            const contactNumber = document.getElementById("contactNumber").value;
+            const email = document.getElementById("email").value;
+            const interests = document.getElementById("interests").value;
+            const blogTitle = document.getElementById("blogTitle").value;
+            const blogContent = document.getElementById("blogContent").value;
+
+            // Store data in local storage
+            localStorage.setItem("websiteName", websiteName);
+            localStorage.setItem("websiteType", websiteType);
+            localStorage.setItem("contactNumber", contactNumber);
+            localStorage.setItem("email", email);
+            localStorage.setItem("interests", interests);
+            localStorage.setItem("blogTitle", blogTitle);
+            localStorage.setItem("blogContent", blogContent);
+
+            // Redirect to the blog page
+            window.open('blog.html', '_blank');
+        });
+    </script>
+
+</body>
+</html>
